@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Que Vive nas Paredes</title>
+    <title>O Que Vive nas Paredes - Experiência Interativa</title>
     <style>
         * {
             margin: 0;
@@ -18,175 +18,6 @@
             line-height: 1.8;
             min-height: 100vh;
             overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px 40px;
-            animation: fadeIn 1s ease-in;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            color: #ff6b6b;
-            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #b0b0b0;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .divider {
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #ff6b6b, transparent);
-            margin: 30px auto;
-        }
-
-        .story-container {
-            background: rgba(20, 20, 40, 0.7);
-            border: 1px solid rgba(255, 107, 107, 0.3);
-            border-radius: 10px;
-            padding: 40px;
-            margin: 30px 0;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.8s ease-out;
-        }
-
-        .story-text {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: #d0d0d0;
-            margin-bottom: 20px;
-        }
-
-        .story-text p {
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .highlight {
-            color: #ff6b6b;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
-        }
-
-        .end-mark {
-            text-align: center;
-            font-size: 1.5rem;
-            color: #ff6b6b;
-            margin-top: 40px;
-            opacity: 0.8;
-        }
-
-        .interactive-wall {
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .wall-button {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-        }
-
-        .wall-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
-            background: linear-gradient(135deg, #ff8787, #ff6b6b);
-        }
-
-        .wall-button:active {
-            transform: translateY(-1px);
-        }
-
-        .knock-effect {
-            position: fixed;
-            pointer-events: none;
-        }
-
-        .knock {
-            animation: knock 0.6s ease-out;
-        }
-
-        @keyframes knock {
-            0% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            25% {
-                transform: translateX(-5px);
-            }
-            50% {
-                transform: translateX(5px);
-            }
-            75% {
-                transform: translateX(-3px);
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 0;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .glow-text {
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
-            }
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #808080;
-            font-size: 0.9rem;
         }
 
         .wall-texture {
@@ -207,25 +38,278 @@
             z-index: 2;
         }
 
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b6b, transparent);
+            margin: 20px auto;
+        }
+
+        .scene-container {
+            background: rgba(20, 20, 40, 0.7);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 10px;
+            padding: 40px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.8s ease-out;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .scene-content {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: #d0d0d0;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .scene-title {
+            font-size: 1.8rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+        }
+
+        .highlight {
+            color: #ff6b6b;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 0.95rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            font-family: 'Georgia', serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.6);
+            background: linear-gradient(135deg, #ff8787, #ff6b6b);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #4a5568, #2d3748);
+            box-shadow: 0 4px 15px rgba(74, 85, 104, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #5a6578, #3d4758);
+            box-shadow: 0 6px 25px rgba(74, 85, 104, 0.6);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #c92a2a, #a61e4d);
+            box-shadow: 0 4px 15px rgba(201, 42, 42, 0.4);
+        }
+
+        .btn-danger:hover {
+            background: linear-gradient(135deg, #d93a3a, #b62e5d);
+            box-shadow: 0 6px 25px rgba(201, 42, 42, 0.6);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes knock {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-3px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+            }
+        }
+
+        .glow-text {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .knock-effect {
+            animation: knock 0.4s ease-out;
+        }
+
+        .scene-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05));
+            border: 2px solid rgba(255, 107, 107, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: rgba(255, 107, 107, 0.5);
+        }
+
+        .choice-info {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 107, 107, 0.2);
+            border-radius: 2px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .ending-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .ending-title {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+
+        .ending-text {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #d0d0d0;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #808080;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
 
-            .story-container {
+            .scene-container {
                 padding: 25px;
             }
 
-            .story-text {
+            .scene-content {
                 font-size: 1rem;
             }
 
-            .container {
-                padding: 15px;
+            .buttons-container {
+                gap: 10px;
             }
 
-            header {
-                padding: 40px 15px 30px;
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
             }
         }
 
@@ -234,23 +318,21 @@
                 font-size: 2rem;
             }
 
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .story-container {
+            .scene-container {
                 padding: 20px;
-                margin: 20px 0;
+                min-height: auto;
             }
 
-            .story-text {
+            .scene-content {
                 font-size: 0.95rem;
-                line-height: 1.6;
             }
 
-            .wall-button {
-                padding: 12px 30px;
-                font-size: 0.9rem;
+            .buttons-container {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
             }
         }
     </style>
@@ -261,91 +343,194 @@
     <main>
         <header>
             <h1 class="glow-text">O Que Vive nas Paredes</h1>
-            <p class="subtitle">Uma história de terror</p>
+            <p class="subtitle">Uma experiência interativa de terror</p>
             <div class="divider"></div>
         </header>
 
         <div class="container">
-            <div class="story-container">
-                <div class="story-text">
-                    <p>Era sexta-feira, 31 de outubro, quando Theo fez a aposta: entrar no Colégio Esperança abandonado, tirar uma foto na diretoria e sair. Mariana, Lucas e Duda aceitaram sem pensar duas vezes. Dezesseis anos e orgulho são uma combinação perigosa.</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
 
-                    <p>O prédio cheirava a mofo e flores podres. No quadro-negro de uma das salas, escrito em giz branco, havia uma frase que ninguém quis ler em voz alta: <span class="highlight">Ainda estou aqui.</span></p>
-
-                    <p>Na diretoria, Lucas fotografou para provar que haviam chegado até lá. O flash durou uma fração de segundo — tempo suficiente para revelar, no canto da sala, uma figura alta e imóvel com o rosto voltado para a parede.</p>
-
-                    <p>Eles correram sem combinar. Na saída, Mariana olhou para trás e viu, no reboco do corredor, a silhueta de uma criança pressionada contra o lado de dentro da parede. Os contornos eram perfeitos. Eram recentes.</p>
-
-                    <p>Ninguém falou sobre isso por duas semanas.</p>
-
-                    <p>Então Duda começou a ouvir batidas em casa, vindas das paredes. Lucas encontrou a silhueta no quarto dele. Pintou por cima. Ela voltou.</p>
-
-                    <p>Mariana só entendeu quando achou uma foto antiga do colégio ainda em funcionamento, datada de março de 2009. Na janela do segundo andar, uma menina olhava diretamente para a câmera.</p>
-
-                    <p>A expressão no rosto dela não era de medo.</p>
-
-                    <p>Era de <span class="highlight">alívio</span>. Alguém havia finalmente olhado de volta.</p>
-
-                    <p>Mariana fechou o computador, ficou imóvel por um momento e, devagar, virou a cabeça para a parede à sua esquerda.</p>
-
-                    <p><span class="highlight">Das paredes, vieram as batidas.</span></p>
-
-                    <div class="end-mark">~ FIM ~</div>
+            <!-- CENA 1: Introdução -->
+            <div class="scene-container fade-in" id="scene1">
+                <div>
+                    <div class="scene-image">🎃</div>
+                    <div class="scene-title">31 de Outubro - A Aposta</div>
+                    <div class="scene-content">
+                        <p>Era sexta-feira, 31 de outubro. Theo faz uma aposta ousada com seus amigos: entrar no <span class="highlight">Colégio Esperança abandonado</span>, tirar uma foto na diretoria e sair. Mariana, Lucas e Duda aceitam sem pensar duas vezes.</p>
+                        <p><span class="highlight">Dezesseis anos e orgulho são uma combinação perigosa.</span></p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="btn" onclick="goToScene(2)">Entrar no Colégio</button>
                 </div>
             </div>
 
-            <div class="interactive-wall">
-                <p style="margin-bottom: 20px; color: #b0b0b0;">Ouça as batidas nas paredes...</p>
-                <button class="wall-button" onclick="playKnock()">🔊 Bater na Parede</button>
+            <!-- CENA 2: O Prédio -->
+            <div class="scene-container fade-in hidden" id="scene2">
+                <div>
+                    <div class="scene-image">🏚️</div>
+                    <div class="scene-title">Dentro do Colégio Esperança</div>
+                    <div class="scene-content">
+                        <p>O prédio cheira a <span class="highlight">mofo e flores podres</span>. A escuridão é quase tangível. Enquanto exploram os corredores, encontram algo perturbador...</p>
+                        <p>No quadro-negro de uma das salas, escrito em giz branco, há uma frase que ninguém quis ler em voz alta:</p>
+                        <p style="text-align: center; font-size: 1.3rem; margin: 20px 0;"><span class="highlight">"Ainda estou aqui"</span></p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="btn" onclick="goToScene(3)">Continuar para a Diretoria</button>
+                </div>
+            </div>
+
+            <!-- CENA 3: A Foto -->
+            <div class="scene-container fade-in hidden" id="scene3">
+                <div>
+                    <div class="scene-image">📸</div>
+                    <div class="scene-title">A Foto na Diretoria</div>
+                    <div class="scene-content">
+                        <p>Chegam à diretoria. Lucas levanta a câmera e tira a foto para provar que chegaram até aqui. O flash durou uma fração de segundo...</p>
+                        <p><span class="highlight">Tempo suficiente para revelar, no canto da sala, uma figura alta e imóvel com o rosto voltado para a parede.</span></p>
+                        <p style="margin-top: 20px; color: #ff8787;">Ninguém viu claramente, mas todos sentiram.</p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="btn btn-danger" onclick="goToScene(4)">Correr!</button>
+                </div>
+            </div>
+
+            <!-- CENA 4: A Fuga -->
+            <div class="scene-container fade-in hidden" id="scene4">
+                <div>
+                    <div class="scene-image">🏃</div>
+                    <div class="scene-title">A Fuga</div>
+                    <div class="scene-content">
+                        <p>Eles correm sem combinar. Seus corações batem acelerados. Na saída, Mariana olha para trás...</p>
+                        <p><span class="highlight">No reboco do corredor, a silhueta de uma criança pressionada contra o lado de dentro da parede.</span></p>
+                        <p>Os contornos são perfeitos. Muito perfeitos. E parecem recentes.</p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="btn" onclick="goToScene(5)">Duas Semanas Depois...</button>
+                </div>
+            </div>
+
+            <!-- CENA 5: Os Sintomas -->
+            <div class="scene-container fade-in hidden" id="scene5">
+                <div>
+                    <div class="scene-image">🔊</div>
+                    <div class="scene-title">As Batidas</div>
+                    <div class="scene-content">
+                        <p>Ninguém falou sobre aquela noite por duas semanas. Mas algo mudou.</p>
+                        <p><span class="highlight">Duda começou a ouvir batidas em casa, vindas das paredes.</span></p>
+                        <p>Lucas encontrou a silhueta no quarto dele. Pintou por cima. Ela voltou.</p>
+                        <p style="margin-top: 20px; color: #ff8787;">As batidas continuam. Todas as noites. Cada vez mais próximas.</p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="btn" onclick="goToScene(6)">Investigar</button>
+                </div>
+            </div>
+
+            <!-- CENA 6: A Descoberta -->
+            <div class="scene-container fade-in hidden" id="scene6">
+                <div>
+                    <div class="scene-image">📷</div>
+                    <div class="scene-title">A Foto Antiga</div>
+                    <div class="scene-content">
+                        <p>Mariana pesquisa. Encontra uma foto antiga do colégio ainda em funcionamento, datada de <span class="highlight">março de 2009</span>.</p>
+                        <p>Na janela do segundo andar, uma menina olha diretamente para a câmera.</p>
+                        <p style="margin-top: 20px; color: #ff8787;">A expressão no rosto dela não é de medo.</p>
+                        <p style="margin-top: 10px; color: #ffb3b3; font-size: 1.2rem;"><span class="highlight">É de alívio.</span></p>
+                        <p style="margin-top: 20px; font-style: italic;">"Alguém havia finalmente olhado de volta."</p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="btn" onclick="goToScene(7)">O Final</button>
+                </div>
+            </div>
+
+            <!-- CENA 7: O Desfecho -->
+            <div class="scene-container fade-in hidden" id="scene7">
+                <div>
+                    <div class="scene-image">👁️</div>
+                    <div class="scene-title">O Desfecho</div>
+                    <div class="scene-content">
+                        <p>Mariana fecha o computador. Fica imóvel por um momento.</p>
+                        <p>Devagar, ela vira a cabeça para a parede à sua esquerda.</p>
+                        <p style="margin-top: 30px; text-align: center; font-size: 1.3rem; color: #ff8787;"><span class="highlight">Das paredes, vieram as batidas.</span></p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="btn" onclick="goToScene(8)">Ver Créditos</button>
+                </div>
+            </div>
+
+            <!-- CENA 8: Créditos -->
+            <div class="scene-container fade-in hidden" id="scene8">
+                <div class="ending-screen">
+                    <div class="ending-title">FIM</div>
+                    <div class="ending-text">
+                        <p>Obrigado por explorar esta história de terror interativa.</p>
+                        <p style="margin-top: 20px; color: #b0b0b0;">Nem tudo que habita as paredes é visível...</p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button class="btn btn-secondary" onclick="goToScene(1)">Começar Novamente</button>
+                </div>
             </div>
         </div>
 
         <footer>
-            <p>Uma história de terror interativa</p>
+            <p>Uma experiência interativa de terror</p>
             <p style="margin-top: 10px; font-size: 0.8rem;">Criada com suspense e atmosfera sombria</p>
         </footer>
     </main>
 
     <script>
-        function playKnock() {
-            // Efeito visual de batida
-            const button = event.target;
-            button.classList.add('knock');
-            setTimeout(() => button.classList.remove('knock'), 600);
+        let currentScene = 1;
+        const totalScenes = 8;
 
-            // Criar múltiplas batidas visuais na tela
-            for (let i = 0; i < 3; i++) {
-                setTimeout(() => {
-                    createKnockEffect();
-                }, i * 150);
-            }
+        function goToScene(sceneNumber) {
+            // Fade out da cena atual
+            const currentSceneElement = document.getElementById(`scene${currentScene}`);
+            currentSceneElement.classList.add('fade-out');
 
-            // Criar som de batida usando Web Audio API
-            playKnockSound();
+            setTimeout(() => {
+                // Esconder todas as cenas
+                for (let i = 1; i <= totalScenes; i++) {
+                    document.getElementById(`scene${i}`).classList.add('hidden');
+                    document.getElementById(`scene${i}`).classList.remove('fade-out');
+                }
+
+                // Mostrar nova cena
+                currentScene = sceneNumber;
+                const newSceneElement = document.getElementById(`scene${sceneNumber}`);
+                newSceneElement.classList.remove('hidden');
+                newSceneElement.classList.add('fade-in');
+
+                // Atualizar barra de progresso
+                updateProgress();
+
+                // Scroll para o topo
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                // Efeito de batida
+                if (sceneNumber === 7) {
+                    playKnockEffect();
+                }
+            }, 500);
         }
 
-        function createKnockEffect() {
-            const knock = document.createElement('div');
-            knock.className = 'knock-effect';
-            knock.style.left = Math.random() * window.innerWidth + 'px';
-            knock.style.top = Math.random() * window.innerHeight + 'px';
-            knock.innerHTML = '💥';
-            knock.style.fontSize = '2rem';
-            document.body.appendChild(knock);
-
-            const animation = knock.animate([
-                { opacity: 1, transform: 'scale(1)' },
-                { opacity: 0, transform: 'scale(0.5)' }
-            ], { duration: 600 });
-
-            animation.onfinish = () => knock.remove();
+        function updateProgress() {
+            const progress = (currentScene / totalScenes) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
         }
 
-        function playKnockSound() {
+        function playKnockEffect() {
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
             const now = audioContext.currentTime;
 
-            // Criar três batidas
             for (let i = 0; i < 3; i++) {
                 const osc = audioContext.createOscillator();
                 const gain = audioContext.createGain();
@@ -356,19 +541,28 @@
                 osc.frequency.setValueAtTime(150, now + i * 0.15);
                 osc.frequency.exponentialRampToValueAtTime(50, now + i * 0.15 + 0.1);
 
-                gain.gain.setValueAtTime(0.3, now + i * 0.15);
+                gain.gain.setValueAtTime(0.2, now + i * 0.15);
                 gain.gain.exponentialRampToValueAtTime(0.01, now + i * 0.15 + 0.1);
 
                 osc.start(now + i * 0.15);
                 osc.stop(now + i * 0.15 + 0.1);
             }
+
+            // Vibração visual
+            document.body.classList.add('knock-effect');
+            setTimeout(() => {
+                document.body.classList.remove('knock-effect');
+            }, 400);
         }
 
-        // Adicionar efeito de batida aleatória ao carregar
+        // Inicializar
+        updateProgress();
+
+        // Efeito ao carregar
         window.addEventListener('load', () => {
             setTimeout(() => {
-                document.body.style.animation = 'knock 0.4s ease-out';
-            }, 1000);
+                playKnockEffect();
+            }, 1500);
         });
     </script>
 </body>
